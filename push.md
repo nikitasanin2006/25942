@@ -2,5 +2,6 @@
 
 git add (name of file or folder)
 eval $(ssh-agent)
+ssh-add ~/.ssh/key
 git commit -m "comment"
 git push -u origin main
