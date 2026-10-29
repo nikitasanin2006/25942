@@ -8,10 +8,9 @@ int main(void)
 {
     time_t now;
     struct tm *sp;
-    struct tm *local = localtime(&now);
+    setenv("TZ", "PST8PDT", 1);
+    void tzset(void);
     (void) time( &now );
-    now -= 8*3600;
-    now -= local->tm_gmtoff;
     printf("%s", ctime( &now) );
     sp = localtime(&now);
     printf("%d/%d/%02d %d:%02d %s\n",
